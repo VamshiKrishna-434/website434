@@ -1,0 +1,147 @@
+/* Header */
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #7F0909;
+    /* Deep red reminiscent of Gryffindor */
+    color: #ffd700;
+    /* Gold text color */
+    position: relative;
+    /* Add relative positioning for sound effects */
+}
+
+.profile {
+    margin-right: 20px;
+}
+
+.profile-pic-container {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-pic {
+    width: 288px;
+    height: 288px;
+    border-radius: 50%;
+    transition: width 0.3s ease, height 0.3s ease, transform 1s ease;
+    position: relative;
+    /* Ensure z-index works */
+    z-index: 1;
+    /* Ensure the profile pic stays above the seal */
+}
+
+.profile-pic:hover {
+    transform: rotate(360deg) scale(1.2);
+    /* Rotate and scale the profile pic on hover */
+}
+
+.gryffindor-seal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border-style: solid;
+    border-width: 30px 30px 0 30px;
+    border-color: #ffd700 transparent transparent transparent;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.profile-pic-container:hover .gryffindor-seal {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.name {
+    font-size: 34px;
+    font-family: 'Harry Potter', sans-serif;
+    /* Use a Harry Potter-inspired font */
+    animation: pulse 2s infinite alternate;
+    /* Gryffindor-themed animation */
+}
+
+/* Navigation */
+.navigation ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+}
+
+.navigation li {
+    margin-right: 20px;
+}
+
+.navigation a {
+    color: #ffd700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navigation a:hover {
+    color: #00ffff;
+    /* Cyan color on hover */
+}
+
+.resume-btn {
+    background-color: #ba9904;
+    /* Dark red background for resume button */
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    animation: pulse 2s infinite alternate;
+    /* Gryffindor-themed animation */
+}
+
+.resume-btn:hover {
+    background-color: #400000;
+    /* Darker red on hover */
+}
+
+/* Gryffindor-themed animations */
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
+
+/* Sound effects */
+.header::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top-color: #ffd700;
+    /* Gold color */
+    transform: translate(-50%, -50%);
+    animation: sparkle 2s infinite alternate;
+    /* Gryffindor-themed animation */
+}
+
+@keyframes sparkle {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+
+    100% {
+        width: 40px;
+        height: 40px;
+        opacity: 0;
+    }
+}
