@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import './Header.css';
 import profileImage from './IMG_20231011_001243.jpg';
-import resumePDF from './Res_VK(2).pdf';
+import resumePDF from './vvkREs.pdf';
 
 const Header = () => {
     const openResumePDF = () => {
